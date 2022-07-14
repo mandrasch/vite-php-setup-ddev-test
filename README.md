@@ -2,7 +2,7 @@
 
 This repo adds DDEV support for  https://github.com/andrefelipe/vite-php-setup. Vite 3 is used, thanks very much to @andrefelipe for providing.
 
-## Run it
+## Setup & run it
 
 ```bash
 ddev exec "cd vite && npm install"
