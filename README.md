@@ -48,7 +48,7 @@ See commit history for full documentation of changes:
 
 https://github.com/mandrasch/vite-php-setup-ddev-test/commit/805cdb57d823894ebe24a0f37d708f350847357b
 
-## More resources
+## More resources / other approaches
  
 - https://github.com/torenware/ddev-viteserve/issues/2
 - https://discord.com/channels/664580571770388500/993996599506259978 
