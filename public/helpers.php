@@ -25,7 +25,8 @@ function vite(string $entry): string
 
 function isDev(string $entry): bool
 {
-    // quick & dirty check
+    // quick & dirty check, you shouldn't rely on $_SERVER['HTTP_HOST']
+    // rather use .env or similiar
     if(strpos($_SERVER['HTTP_HOST'],".ddev.site") !== false){
         return true; // activate dev mode
     }

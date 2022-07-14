@@ -40,4 +40,6 @@ ddev start
   },
 ```
 
-See commit history for full documentation of changes. 
+See commit history for full documentation of changes:
+
+https://github.com/mandrasch/vite-php-setup-ddev-test/commit/805cdb57d823894ebe24a0f37d708f350847357b
