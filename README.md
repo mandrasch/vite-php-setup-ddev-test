@@ -1,8 +1,6 @@
-WIP, just demo repo
+# vite-php-setup-ddev-test
 
-Fork of https://github.com/andrefelipe/vite-php-setup, this setup uses a custom port (5133). Vite 3 is used, thanks to @andrefelipe for providing.
-
-This repo adds DDEV support.
+This repo adds DDEV support for  https://github.com/andrefelipe/vite-php-setup. Vite 3 is used, thanks very much to @andrefelipe for providing.
 
 ## Run it
 
@@ -10,13 +8,16 @@ This repo adds DDEV support.
 ddev exec "cd vite && npm install"
 ddev launch
 ddev exec "cd vite && npm run dev"
-# reload browser now, vite should be active
+# open/reload browser now, vite should be active
+# change something in js/css to check if hot module reloading works
 ```
 
 - Assets won't work out of the box, see: https://github.com/andrefelipe/vite-php-setup#known-issue-2-during-dev-only
 - If you run into "502 broken DDEV backend", a `ddev restart` sometimes helps
 
-## What was changed/added?
+## What was changed/added after forking?
+
+- Init DDEV: 
 
 ```bash
 ddev config --project-type=php --docroot="public"
@@ -43,3 +44,10 @@ ddev start
 See commit history for full documentation of changes:
 
 https://github.com/mandrasch/vite-php-setup-ddev-test/commit/805cdb57d823894ebe24a0f37d708f350847357b
+
+## More resources
+ 
+- https://github.com/torenware/ddev-viteserve/issues/2
+- https://discord.com/channels/664580571770388500/993996599506259978 
+- https://github.com/iammati/vite-ddev
+- https://github.com/nystudio107/craft-vite/ (uses `ports` which is not recommended) via https://craftquest.io/courses/ddev-and-craft-cms-quick-start-guide/43674
