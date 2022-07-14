@@ -6,13 +6,17 @@ This repo adds DDEV support for  https://github.com/andrefelipe/vite-php-setup. 
 
 ```bash
 ddev exec "cd vite && npm install"
-ddev launch
-ddev exec "cd vite && npm run dev"
+# Add symlink, see https://github.com/andrefelipe/vite-php-setup#known-issue-2-during-dev-only
+ddev exec "ln -s /var/www/html/vite/src/assets /var/www/html/public/assets"
+
+ddev exec "cd vite && npm run dev" 
 # open/reload browser now, vite should be active
+ddev launch
 # change something in js/css to check if hot module reloading works
 ```
 
 - Assets won't work out of the box, see: https://github.com/andrefelipe/vite-php-setup#known-issue-2-during-dev-only
+    - Can be solved via `ddev exec "ln -s /var/www/html/vite/src/assets /var/www/html/public/assets"`
 - If you run into "502 broken DDEV backend", a `ddev restart` sometimes helps
 
 ## What was changed/added after forking?
