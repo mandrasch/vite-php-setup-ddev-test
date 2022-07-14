@@ -1,6 +1,6 @@
 <?php
 // Helpers here serve as example. Change to suit your needs.
-const VITE_HOST = 'http://localhost:5133';
+const VITE_HOST = 'https://vite-php-setup-ddev-test.ddev.site:5133';
 
 // For a real-world example check here:
 // https://github.com/wp-bond/bond/blob/master/src/Tooling/Vite.php
@@ -25,6 +25,14 @@ function vite(string $entry): string
 
 function isDev(string $entry): bool
 {
+    // quick & dirty check
+    if(strpos($_SERVER['HTTP_HOST'],".ddev.site") !== false){
+        return true; // activate dev mode
+    }
+
+    // The code below doesn't work in DDEV, but that's fine
+    // (Normally this is done via .env file or similiar)
+
     // This method is very useful for the local server
     // if we try to access it, and by any means, didn't started Vite yet
     // it will fallback to load the production files from manifest

@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+  web:
+    expose:
+      - '5133'
+    environment:
+      - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,5134:5133
+      - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,5133:5133
+      # HTTPS 5133 -> 5133, HTTP 5134->5133, 
+      # see https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/
