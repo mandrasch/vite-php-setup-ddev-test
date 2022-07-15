@@ -36,7 +36,7 @@ ddev config --project-type=php --docroot="public"
 ddev start
 ```
 
-- Added `.ddev/docker-compose.vite.yaml` for DDEV router port handling (run `ddev restart` afterwards):
+- Added [`.ddev/docker-compose.vite.yaml`](https://github.com/mandrasch/vite-php-setup-ddev-test/blob/master/.ddev/docker-compose.vite.yaml) for DDEV router port handling (run `ddev restart` afterwards):
 
 ```yaml
 version: '3.6'
@@ -49,9 +49,11 @@ services:
       - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,5173:5173
 ```
 
-- Set `const VITE_HOST = 'https://vite-php-setup-ddev-test.ddev.site:5173';` in `public/helpers.php`
-- Set `isDev` to true when `.ddev.site` is in URL  in `public/helpers.php`
-- Modified `vite/vite.config.js` server settings:
+- Modified [`public/helpers.php`](https://github.com/mandrasch/vite-php-setup-ddev-test/blob/master/public/helpers.php):
+  - Set `const VITE_HOST = 'https://vite-php-setup-ddev-test.ddev.site:5173';`
+  - Set `isDev` to true when `.ddev.site` is in URL 
+
+- Modified `vite/vite.config.js` server settings in order to let vite respond to all network requests (required for DDEV router):
 
 ```javascript
  server: {
@@ -62,10 +64,6 @@ services:
     port: 5173
   },
 ```
-
-See commit history for full documentation of changes:
-
-https://github.com/mandrasch/vite-php-setup-ddev-test/commit/805cdb57d823894ebe24a0f37d708f350847357b
 
 ## More resources / other approaches
  
