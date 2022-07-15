@@ -1,4 +1,4 @@
-**NEW**: https://github.com/mandrasch/ddev-simple-vite <br>
+**NEW**: https://github.com/mandrasch/ddev-addon-simple-vite <br>
 You can try out this addon as well if you have an existing PHP application with vite runnning 
 
 <hr>
