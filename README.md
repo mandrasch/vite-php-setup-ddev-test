@@ -1,4 +1,6 @@
-NEW: You can try out this addon as well if you have an existing PHP application with vite runnning https://github.com/mandrasch/ddev-simple-vite
+**NEW**: You can try out this addon as well if you have an existing PHP application with vite runnning https://github.com/mandrasch/ddev-simple-vite
+
+<hr>
 
 # vite-php-setup-ddev-test
 
