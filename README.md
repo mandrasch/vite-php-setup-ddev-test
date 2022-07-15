@@ -59,7 +59,6 @@ services:
     host: '0.0.0.0',
     // we need a strict port to match on PHP side
     strictPort: true,
-    // use custom port
     port: 5173
   },
 ```
