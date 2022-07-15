@@ -1,8 +1,12 @@
 # vite-php-setup-ddev-test
 
-This repo adds DDEV support for  https://github.com/andrefelipe/vite-php-setup. Vite 3 is used, thanks very much to @andrefelipe for providing.
+This repo adds DDEV support for https://github.com/andrefelipe/vite-php-setup. 
 
-## Setup & run it
+The new default vite 3 port `5173` is used in this example. It is assumed that you visit your DDEV site via `https://`. 
+
+Thanks very much to @andrefelipe for providing!
+
+## Set up & run it
 
 ```bash
 ddev exec "cd vite && npm install"
@@ -10,10 +14,15 @@ ddev exec "cd vite && npm install"
 # see https://github.com/andrefelipe/vite-php-setup#known-issue-2-during-dev-only
 ddev exec "ln -s /var/www/html/vite/src/assets /var/www/html/public/assets"
 
-ddev exec "cd vite && npm run dev" 
-# open/reload browser now, vite should be active
+# open your site in browser, vite is not active yet
 ddev launch
-# change something in js/css to check if hot module reloading works
+
+# run vite & reload your browser window
+ddev exec "cd vite && npm run dev" 
+
+# vite should now be active, change something in src/main.js 
+# or src/styles/examples.css to check if hot module reloading 
+# works, e.g. add alert('hello world'). 
 ```
 
 - If you run into "502 broken DDEV backend", a `ddev restart` sometimes helps
@@ -34,13 +43,13 @@ version: '3.6'
 services:
   web:
     expose:
-      - '5133'
+      - '5173'
     environment:
-      - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,5134:5133
-      - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,5133:5133
+      - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,5174:5173
+      - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,5173:5173
 ```
 
-- Set `const VITE_HOST = 'https://vite-php-setup-ddev-test.ddev.site:5133';` in `public/helpers.php`
+- Set `const VITE_HOST = 'https://vite-php-setup-ddev-test.ddev.site:5173';` in `public/helpers.php`
 - Set `isDev` to true when `.ddev.site` is in URL  in `public/helpers.php`
 - Modified `vite/vite.config.js` server settings:
 
@@ -49,10 +58,9 @@ services:
     // respond to all network requests
     host: '0.0.0.0',
     // we need a strict port to match on PHP side
-    // change freely, but update on PHP to match the same port
-    // tip: choose a different port per project to run them at the same time
     strictPort: true,
-    port: 5133
+    // use custom port
+    port: 5173
   },
 ```
 
@@ -62,7 +70,9 @@ https://github.com/mandrasch/vite-php-setup-ddev-test/commit/805cdb57d823894ebe2
 
 ## More resources / other approaches
  
-- https://github.com/torenware/ddev-viteserve/issues/2
-- https://discord.com/channels/664580571770388500/993996599506259978 
-- https://github.com/iammati/vite-ddev
-- https://github.com/nystudio107/craft-vite/ (uses `ports` which is not recommended) via https://craftquest.io/courses/ddev-and-craft-cms-quick-start-guide/43674
+- [Discussion with fellow DDEV users](https://github.com/torenware/ddev-viteserve/issues/2#issuecomment-1184472413)
+- Other approaches
+  - https://github.com/iammati/vite-ddev
+  - https://github.com/torenware/ddev-viteserve
+- Laravel + Vite + DDEV (WIP): https://github.com/mandrasch/ddev-laravel-breeze-vite
+- Vite + DDEV in Craft CMS: https://nystudio107.com/docs/vite/#using-ddev (uses `ports` which is not recommended, see [comment by @rfay](https://github.com/torenware/ddev-viteserve/issues/2#issuecomment-1184472413)) via [craftquest](https://craftquest.io/courses/ddev-and-craft-cms-quick-start-guide/43674)

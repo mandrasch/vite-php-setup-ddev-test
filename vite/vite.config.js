@@ -56,10 +56,8 @@ export default defineConfig({
     // respond to all network requests
     host: '0.0.0.0',
     // we need a strict port to match on PHP side
-    // change freely, but update on PHP to match the same port
-    // tip: choose a different port per project to run them at the same time
     strictPort: true,
-    port: 5133
+    port: 5173
   },
 
   // required for in-browser template compilation

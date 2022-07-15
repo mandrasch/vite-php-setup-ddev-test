@@ -1,6 +1,7 @@
 <?php
 // Helpers here serve as example. Change to suit your needs.
-const VITE_HOST = 'https://vite-php-setup-ddev-test.ddev.site:5133';
+// This could be in an `.env` file
+const VITE_HOST = 'https://vite-php-setup-ddev-test.ddev.site:5173';
 
 // For a real-world example check here:
 // https://github.com/wp-bond/bond/blob/master/src/Tooling/Vite.php

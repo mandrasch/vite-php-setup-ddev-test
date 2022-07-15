@@ -2,9 +2,9 @@ version: '3.6'
 services:
   web:
     expose:
-      - '5133'
+      - '5173'
     environment:
-      - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,5134:5133
-      - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,5133:5133
-      # HTTPS 5133 -> 5133, HTTP 5134->5133, 
+      - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,5174:5173
+      - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,5173:5173
+      # HTTP 5134 is just a dummy port, we only use https
       # see https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/
