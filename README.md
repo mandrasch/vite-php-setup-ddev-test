@@ -53,7 +53,7 @@ services:
   - Set `const VITE_HOST = 'https://vite-php-setup-ddev-test.ddev.site:5173';`
   - Set `isDev` to true when `.ddev.site` is in URL 
 
-- Modified `vite/vite.config.js` server settings in order to let vite respond to all network requests (required for DDEV router):
+- Modified [`vite/vite.config.js`](https://github.com/mandrasch/vite-php-setup-ddev-test/blob/master/vite/vite.config.js) server settings in order to let vite respond to all network requests (required for DDEV router):
 
 ```javascript
  server: {
