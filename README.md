@@ -20,9 +20,8 @@ ddev launch
 # run vite & reload your browser window
 ddev exec "cd vite && npm run dev" 
 
-# vite should now be active, change something in src/main.js 
-# or src/styles/examples.css to check if hot module reloading 
-# works, e.g. add alert('hello world'). 
+# vite should now be active, change something in src/styles/examples.css
+# or components/HelloWorld.vue to test hot module replacement.
 ```
 
 - If you run into "502 broken DDEV backend", a `ddev restart` sometimes helps
