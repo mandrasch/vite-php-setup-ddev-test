@@ -71,6 +71,7 @@ services:
 
 ## More resources / other approaches
  
+- (Experimental) add-on for DDEV https://github.com/mandrasch/ddev-addon-simple-vite
 - [Discussion with fellow DDEV users](https://github.com/torenware/ddev-viteserve/issues/2#issuecomment-1184472413)
 - Other approaches
   - https://github.com/iammati/vite-ddev
