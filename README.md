@@ -1,7 +1,23 @@
+
+## Moved
+
+Please see https://my-ddev-lab.mandrasch.eu/tutorials/nodejs-tools/vite.html for latest infos. 🚀
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<hr>
+
+Outdated docs: 
+
 **NEW**: https://github.com/mandrasch/ddev-addon-simple-vite <br>
 You can try out this addon as well if you have an existing PHP application with vite runnning 
 
-<hr>
 
 # vite-php-setup-ddev-test
 
